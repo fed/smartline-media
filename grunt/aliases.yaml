@@ -1,0 +1,14 @@
+version:
+  - writefile
+php:
+  - phplint
+  - copy:php
+build:
+  - clean
+  - version
+  - php
+start:
+  - build
+  - watch
+default:
+  - start
