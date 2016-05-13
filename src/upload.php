@@ -11,6 +11,16 @@ if (DEBUG) {
 }
 
 try {
+  // Must provide a valid API key when uploading pictures
+  if ($_POST["apiKey"] !== API_KEY) {
+    echo json_encode(array(
+      "success" => false,
+      "message" => "Please provide a valid API key."
+    ));
+
+    die();
+  }
+
   $imageUploader = new ImageUploader(UPLOAD_DIR, MD5_HASH_SALT, MAX_FILE_SIZE);
   $uid = time() . rand();
   $filename = $imageUploader->upload($_FILES[INPUT_FIELD_NAME], $uid);
