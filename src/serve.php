@@ -12,7 +12,9 @@ if (DEBUG) {
 try {
   $imageRenderer = new ImageRenderer(UPLOAD_DIR);
   $filename = Sanitizer::sanitizeFilename($_GET["id"]);
-  $res = $imageRenderer->serve($filename, $_GET["width"], $_GET["height"]);
+  $width = isset($_GET['width']) ? intval($_GET['width']) : null;
+  $height = isset($_GET['height']) ? intval($_GET['height']) : null;
+  $res = $imageRenderer->serve($filename, $width, $height);
 
   var_dump($res);
 } catch (Exception $e) {
