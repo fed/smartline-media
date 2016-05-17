@@ -29,7 +29,7 @@ try {
     $response = array(
       "success" => true,
       "filename" => $filename,
-      "url" => MEDIA_SERVER_URL . "?id=" . $filename . "&width="
+      "url" => MEDIA_SERVER_URL . "serve.php?id=" . $filename
     );
   } else {
     $response = array(
