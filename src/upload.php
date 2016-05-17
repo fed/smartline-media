@@ -33,7 +33,8 @@ try {
     );
   } else {
     $response = array(
-      "success" => false
+      "success" => false,
+      "message" => "We couldn't upload your picture. Please make sure it meets the filetype and size restrictions and try again."
     );
   }
 
