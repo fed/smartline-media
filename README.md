@@ -39,6 +39,10 @@ To upload images:
 </form>
 ```
 
+You need to `POST` to the upload endpoint, being `image` and `apiKey` the fields you need to populate:
+
+![Uploading pictures using Postman](http://i.imgur.com/u3ThDd1.png)
+
 ## Release Versions
 
 Follow these steps to have your feature branch merged:
