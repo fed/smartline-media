@@ -16,8 +16,8 @@ Grunt CLI can be installed globally for convenience with `npm install -g grunt-c
 | Command           | Description                      |
 |-------------------|----------------------------------|
 | `npm install`     | Fetch dependencies               |
-| `grunt`           | Watch for changes on .php files  |
-| `grunt build`     | Build all the things!            |
+| `npm start`       | Watch for changes on .php files  |
+| `npm run build`   | Build all the things!            |
 
 ## Usage
 
@@ -31,7 +31,7 @@ To serve images:
 
 To upload images:
 
-```
+```html
 <form method="POST" action="upload.php" enctype="multipart/form-data">
   <input type="hidden" name="apiKey" value="<API_KEY>">
   <input type="file" name="image" />
@@ -42,6 +42,22 @@ To upload images:
 You need to `POST` to the upload endpoint, being `image` and `apiKey` the fields you need to populate:
 
 ![Uploading pictures using Postman](http://i.imgur.com/u3ThDd1.png)
+
+From the client using [axios](https://github.com/mzabriskie/axios):
+
+```js
+// Needs be sent as `multipart/form-data`
+const data = new FormData();
+
+data.append('apiKey', MEDIA_SERVER_API_KEY);
+data.append('image', file);
+
+axios
+  .post(media, data)
+  .then((response) => console.log(response.data));
+```
+
+where `file` here is an [HTML5 file](https://developer.mozilla.org/en/docs/Web/API/File) -- which should be an image.
 
 ## Release Versions
 
