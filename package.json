@@ -2,7 +2,7 @@
   "name": "smartline-media",
   "version": "0.1.1",
   "description": "Smartline Media Server API",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "author": {
     "name": "Federico Knüssel",
     "email": "fknussel@gmail.com"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://fknussel@bitbucket.org/fknussel/smartline-media.git"
+    "url": "git+https://github.com/fknussel/smartline-media.git"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
