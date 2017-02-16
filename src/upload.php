@@ -1,8 +1,7 @@
 <?php
 
 header("Access-Control-Allow-Headers: *");
-header("Access-Control-Allow-Origin: http://admin.freyre.com.ar");
-header("Access-Control-Allow-Origin: http://localhost:6789");
+header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 require("utils/constants.php");
