@@ -1,6 +1,6 @@
 # Smartline Media Server API
 
-![Smartline](http://i.imgur.com/UHyyc4e.png)
+![Smartline](https://i.imgur.com/UHyyc4e.png)
 
 ## Usage
 
@@ -12,12 +12,12 @@ To serve images:
 ./serve.php?id=<FILENAME>&width=<WIDTH>&height=<HEIGHT>
 ```
 
-If the server support htaccess redirection:
+If the server supports htaccess redirection:
 
 ```
-./image/<FILENAME>
-./image/<FILENAME>/width/<WIDTH>
-./image/<FILENAME>/width/<WIDTH>/height/<HEIGHT>
+<HOSTNAME>/image/<FILENAME>
+<HOSTNAME>/image/<FILENAME>/width/<WIDTH>
+<HOSTNAME>/image/<FILENAME>/width/<WIDTH>/height/<HEIGHT>
 ```
 
 To upload images:
