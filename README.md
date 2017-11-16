@@ -73,3 +73,11 @@ sudo chown www-data:www-data files
 ```
 
 **Note:** `www-data` is the user Apache runs under. You might need to change it depending on your server's config.
+
+## Updating Media Server URL
+
+```sql
+UPDATE media
+	SET url = REPLACE(url, 'http://media.freyre.com.ar', 'https://smartline-media.argendev.com')
+	WHERE type = 'image'
+```
