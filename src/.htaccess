@@ -1,0 +1,27 @@
+# Set the environment up to follow symbolic links using the Options directive.
+# This may or may not be necessary, but some web hosts use symlinks
+# (similar to alias in MacOSX or shortcuts is Windows) for common HTTP request errors
+# and these are usually symlinked files.
+# Next we tell Apache we are going to use the Rewrite Engine.
+Options +FollowSymLinks
+RewriteEngine On
+
+# Restricts rewriting URLs only to paths that do not actually exists.
+# This prevents the rules below from matching example.com/images/logo.png for example.
+# The first prevents existing directories with the !-d flag
+# and the second with !-f means ignore existing files.
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Each line creates a rule that tries to match a regular expressions pattern against the incoming URL.
+# The asterisk means the user can enter whatever they want, and it won't affect the rewrite,
+# this is primarily to handle a trailing slash so users/123 is the same as users/123/.
+RewriteRule ^image/(.*)$ ./serve.php?id=$1
+RewriteRule ^image/(.*)/width/(\d+)*$ ./serve.php?id=$1&width=$2
+RewriteRule ^image/(.*)/width/(\d+)*/height/(\d+)*$ ./serve.php?id=$1&width=$2&height=$3
+
+# Here's the resulting mapping:
+# Before:
+# http://media.freyre.com.ar/serve.php?id=42e5e0faf301c2d381927f3dbe93b983&width=500&height=250
+# After:
+# https://smartline-media.argendev.com/image/42e5e0faf301c2d381927f3dbe93b983/width/500/height/250
