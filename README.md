@@ -2,23 +2,6 @@
 
 ![Smartline](http://i.imgur.com/UHyyc4e.png)
 
-## Prerequisites
-
-* Node.js (http://nodejs.org/)
-* Grunt CLI (http://gruntjs.com/)
-
-Run `npm install` the first time you download the app in order to build the binaries for any node modules.
-
-Grunt CLI can be installed globally for convenience with `npm install -g grunt-cli`, otherwise the binary can be found here: `./node_modules/grunt-cli/bin/grunt`.
-
-## Development Tasks
-
-| Command           | Description                      |
-|-------------------|----------------------------------|
-| `npm install`     | Fetch dependencies               |
-| `npm start`       | Watch for changes on .php files  |
-| `npm run build`   | Build all the things!            |
-
 ## Usage
 
 To serve images:
@@ -27,6 +10,14 @@ To serve images:
 ./serve.php?id=<FILENAME>
 ./serve.php?id=<FILENAME>&width=<WIDTH>
 ./serve.php?id=<FILENAME>&width=<WIDTH>&height=<HEIGHT>
+```
+
+If the server support htaccess redirection:
+
+```
+./image/<FILENAME>
+./image/<FILENAME>/width/<WIDTH>
+./image/<FILENAME>/width/<WIDTH>/height/<HEIGHT>
 ```
 
 To upload images:
@@ -61,8 +52,7 @@ where `file` here is an [HTML5 file](https://developer.mozilla.org/en/docs/Web/A
 
 ## Deploying to Production
 
-1. Run `grunt build` to make sure you are deploying the latest version of the project
-1. Copy all files within the `dist/` folder into the root of `http://media.domain.com`
+1. Copy all files within the `src/` folder into the root of `http://media.domain.com` (make sure to also copy the hidden `.htaccess` file)
 2. Create a `files/` folder also on the root of `http://media.domain.com`
 3. Grant the `files/` folder appropriate write permissions:
 
@@ -78,6 +68,6 @@ sudo chown www-data:www-data files
 
 ```sql
 UPDATE media
-	SET url = REPLACE(url, 'http://media.freyre.com.ar', 'https://smartline-media.argendev.com')
-	WHERE type = 'image'
+  SET url = REPLACE(url, 'http://media.freyre.com.ar', 'https://smartline-media.argendev.com')
+  WHERE type = 'image'
 ```
