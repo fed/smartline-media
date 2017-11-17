@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "smartline-media",
+  "version": "0.1.4",
+  "description": "Smartline Media Server API",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Federico Knüssel",
+    "email": "fknussel@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fknussel/smartline-media.git"
+  }
+}
