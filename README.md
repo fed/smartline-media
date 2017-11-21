@@ -66,8 +66,10 @@ sudo chown www-data:www-data files
 
 ## Updating Media Server URL
 
+Run this query:
+
 ```sql
 UPDATE media
-  SET url = REPLACE(url, 'http://media.freyre.com.ar', 'https://smartline-media.argendev.com')
+  SET url = REPLACE(url, 'http://smartline-media.argendev.com', 'https://media.smartline.argendev.com')
   WHERE type = 'image'
 ```

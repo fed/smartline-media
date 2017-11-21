@@ -22,6 +22,6 @@ RewriteRule ^image/(.*)/width/(\d+)*/height/(\d+)*$ ./serve.php?id=$1&width=$2&h
 
 # Here's the resulting mapping:
 # Before:
-# http://media.freyre.com.ar/serve.php?id=42e5e0faf301c2d381927f3dbe93b983&width=500&height=250
+# http://smartline-media.argendev.com/serve.php?id=42e5e0faf301c2d381927f3dbe93b983&width=500&height=250
 # After:
 # https://smartline-media.argendev.com/image/42e5e0faf301c2d381927f3dbe93b983/width/500/height/250
