@@ -1,4 +1,8 @@
-# Smartline Media Server API
+# Smartline Media Server
+
+```diff
+- THIS MEDIA SERVER HAS BEEN DEPRECATED IN FAVOUR OF CLOUDINARY ⚠️
+```
 
 ![Smartline](https://i.imgur.com/UHyyc4e.png)
 
